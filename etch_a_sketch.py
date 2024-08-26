@@ -21,6 +21,13 @@ def move_right()->None:
     """
     to = tom.heading() - 10
     tom.setheading(to)
+def clear_screen()-> None:
+    """_Clear the screen and return turtle home_
+    """
+    tom.clear()
+    tom.penup()
+    tom.home()
+    tom.pendown()
 
 def etch_a_sketch():
     screen.listen()
@@ -28,6 +35,7 @@ def etch_a_sketch():
     screen.onkey(move_backward,"s")
     screen.onkey(move_left,"a")
     screen.onkey(move_right,"d")
+    screen.onkey(clear_screen,"c")
     screen.exitonclick()
 
 if __name__ == "__main__":
